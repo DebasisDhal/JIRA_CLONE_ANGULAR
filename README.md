@@ -2,7 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2.
 
-Image add in public 
+# app.module.ts (Like before angular-17 without standalone)
+# Image add in public 
+# How to added Image url that mention
+# Date pipe
+# Modal => projects page | without Ts file simple call ID button click modal open and close => Layout page
+# Template driven Form
 
 ## Development server
 

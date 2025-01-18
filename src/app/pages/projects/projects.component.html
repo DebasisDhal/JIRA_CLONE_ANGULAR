@@ -1,1 +1,94 @@
-<p>projects works!</p>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-success" data-toggle="modal" (click)="openModal()" data-target="#exampleModal">
+New Project
+</button>
+
+<div class="container mt-4">
+    <div class="row">
+      @for (item of projectList; track $index) {
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-header text-center">
+              <h5 class="card-title mb-0">{{item.shortName}}</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        {{item.projectName}}
+                    </div>
+                    <div class="col-6">
+                        {{item.createdDate | date: 'dd-MM-yy'}}
+                    </div>
+                </div>
+           
+            </div>
+            <div class="card-footer text-center">
+                <div class="row">
+                <div class="col-6">
+              <button class="btn btn-success btn-sm">Edit</button>
+              </div>
+              <div class="col-6">
+              <button class="btn btn-danger btn-sm">Delete</button>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+  
+
+
+
+<!-- Modal -->
+
+<div id="myModal" class="modal  modal-lg" role="dialog" #propertyModal>
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+       
+      </div>
+      <div class="modal-body">
+        <form #nameForm="ngForm" >
+          <!-- Short Name Field -->
+          <div class="form-group">
+            <label for="shortName">Short Name</label>
+            <input
+              type="text"
+              id="shortName"
+              class="form-control"
+              name="shortName"
+              [(ngModel)]="projectObj.shortName"
+           
+            />
+          
+          </div>
+        
+          <!-- Long Name Field -->
+          <div class="form-group">
+            <label for="longName">Long Name</label>
+            <input
+              type="text"
+              id="longName"
+              class="form-control"
+              name="longName"
+              [(ngModel)]="projectObj.projectName"
+             
+            />
+           
+          </div>
+        
+    
+        </form>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="closeModal()">Close</button>
+        <button type="button" class="btn btn-primary" (click)="onSaveProjct()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

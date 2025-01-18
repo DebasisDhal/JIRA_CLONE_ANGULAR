@@ -23,6 +23,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            
+             
+         
             "outputPath": "dist/jira",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -41,6 +44,7 @@
             ],
             "scripts": [],
             "server": "src/main.server.ts",
+
             "prerender": true,
             "ssr": {
               "entry": "server.ts"
@@ -71,7 +75,11 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+            "proxyConfig": "src/proxy.conf.json"
+        },
           "builder": "@angular-devkit/build-angular:dev-server",
+       
           "configurations": {
             "production": {
               "buildTarget": "Jira:build:production"
@@ -101,9 +109,13 @@
               }
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           }
         }
       }

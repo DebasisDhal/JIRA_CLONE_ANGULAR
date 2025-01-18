@@ -1,1 +1,103 @@
-<p>users works!</p>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-success" data-toggle="modal" (click)="openModal()" data-target="#exampleModal">
+    New User 
+    </button>
+    
+    <div class="container mt-4">
+        <div class="row">
+          @for (item of userList; track $index) {
+            <div class="col-md-4 mb-4">
+              <div class="card shadow-sm">
+                <div class="card-header text-center">
+                  <h5 class="card-title mb-0">{{item.emailId}}</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            {{item.fullName}}
+                        </div>
+                        <div class="col-6">
+                            {{item.userId }}
+                        </div>
+                    </div>
+               
+                </div>
+                <div class="card-footer text-center">
+                    <div class="row">
+                    <div class="col-6">
+                  <button class="btn btn-success btn-sm">Edit</button>
+                  </div>
+                  <div class="col-6">
+                  <button class="btn btn-danger btn-sm">Delete</button>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+      
+    
+    
+    
+    <!-- Modal -->
+    
+    <div id="myModal" class="modal  modal-lg" role="dialog" #propertyModal>
+    
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"> New User create</h5>
+           
+          </div>
+          <div class="modal-body">
+            <form #nameForm="ngForm" >
+             
+                <div class="form-group">
+                    <label for="fullName">Email id</label>
+                    <input
+                      type="text"
+                      id="emailId"
+                      class="form-control"
+                      name="emailId"
+                      [(ngModel)]="projectObj.emailId"
+                     
+                    />
+                    </div>
+                  <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input
+                      type="text"
+                      id="fullName"
+                      class="form-control"
+                      name="fullName"
+                      [(ngModel)]="projectObj.fullName"
+                     
+                    />
+                   
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                      type="text"
+                      id="password"
+                      class="form-control"
+                      name="password"
+                      [(ngModel)]="projectObj.password"
+                     
+                    />
+                   
+                  </div>
+            
+        
+            </form>
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="closeModal()">Close</button>
+            <button type="button" class="btn btn-primary" (click)="onSaveUser()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>

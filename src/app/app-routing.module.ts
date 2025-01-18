@@ -8,7 +8,7 @@ import { BoardComponent } from './pages/board/board.component';
 
 const routes: Routes = [
   {
-    path:'*',
+    path:'',
     redirectTo:'login',
     pathMatch : "full"
   },
@@ -33,6 +33,10 @@ const routes: Routes = [
             component:BoardComponent
         }
     ]
+  },
+  {
+    path:'**',
+    component:LoginComponent
   }
 ];
 
