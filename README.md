@@ -8,6 +8,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 # Date pipe
 # Modal => projects page | without Ts file simple call ID button click modal open and close => Layout page
 # Template driven Form
+# Login user data store in Localstorage => Login page | Handle error when get data => layout page
+# Here i created a variable in service help to transfer data layout page to board page
 
 ## Development server
 

@@ -1,11 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MasterService {
+
+  public onProjectChange = new Subject();
+  public onTicketCreate = new Subject();
 
   private baseurl = 'api/Jira/';
 
@@ -28,6 +31,12 @@ export class MasterService {
   }
   createUser(obj:any):Observable<any>{
     return this.http.post(this.baseurl+'CreateUser',obj);
+  }
+  createTicket(obj:any):Observable<any>{
+    return this.http.post(this.baseurl+'CreateTicket',obj);
+  }
+  getTicketByProjectId(id:any):Observable<any>{
+    return this.http.get(this.baseurl+'GetTicketsByProjectId?projectid='+id);
   }
 }
 
