@@ -1,4 +1,13 @@
 # Jira
+![image](https://github.com/user-attachments/assets/dd165276-b399-4cbb-bc19-29c45eddd3c6)
+![image](https://github.com/user-attachments/assets/cdd99571-2f28-4bfe-ba78-ed4716e43d90)
+![image](https://github.com/user-attachments/assets/cd93b0e7-c2f4-4b5a-9175-d077decc05e8)
+![image](https://github.com/user-attachments/assets/5566368d-7119-46f6-b2a1-a8124a9e7f37)
+![image](https://github.com/user-attachments/assets/7f349f9f-1f23-4ae9-9976-3cc211f65262)
+![image](https://github.com/user-attachments/assets/eba6a473-c3ff-44c8-b839-edf2b10bf278)
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2.
 
